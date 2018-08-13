@@ -23,6 +23,7 @@ $(document).ready(function() {
     });
     console.log(foods);
   });
+
   $("#caveMan").submit(function(event) {
     event.preventDefault();
     $("#caveMan").toggle();
@@ -37,4 +38,24 @@ $(document).ready(function() {
     var reverseWords = bigWords.reverse();
     $(".caveSpeech").text(reverseWords.join(" "));
   });
+
+    $("#deckcards").submit(function(event) {
+      event.preventDefault();
+      var suits = [" of Clubs"," of Diamonds"," of Spades"," of Hearts"];
+      var numbers = ["Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"];
+
+      suits.forEach(function(suit) {
+        numbers.forEach(function(number) {
+          if (suit === " of Clubs") { $(".Clubs").append('<li>'+number+suit+'</li>');
+        } else if (suit === " of Diamonds") { $(".Diamonds").append('<li>'+number+suit+'</li>');
+      } else if (suit === " of Spades") { $(".Spades").append('<li>'+number+suit+'</li>');
+          } else {
+          $(".Hearts").append('<li>'+number+suit+'</li>');
+          }
+        });
+      });
+
+
+    });
+
 });
