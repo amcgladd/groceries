@@ -23,4 +23,18 @@ $(document).ready(function() {
     });
     console.log(foods);
   });
+  $("#caveMan").submit(function(event) {
+    event.preventDefault();
+    $("#caveMan").toggle();
+    var speech = $("#caveInput").val().split(" ");
+    var bigWords = [];
+    speech.forEach(function(word) {
+      if (word.length >= 3) {
+        bigWords.push(word);
+        console.log(bigWords);
+      };
+    });
+    var reverseWords = bigWords.reverse();
+    $(".caveSpeech").text(reverseWords.join(" "));
+  });
 });
